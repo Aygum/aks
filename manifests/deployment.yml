@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: aygumaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aygumaks
+  template:
+    metadata:
+      labels:
+        app: aygumaks 
+    spec:
+      containers:
+        - name: aygumaks 
+          image: mycontainerregistrypavel.azurecr.io/aygumaks
+          ports:
+          - containerPort: 8080
